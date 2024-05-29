@@ -13,7 +13,7 @@ while True:
         for (x, y, w, h) in number_plates:
             cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 255), 3)
             cv2.putText(frame, "number plate", (x, y - 5), cv2.FONT_HERSHEY_DUPLEX, 1, (255, 0, 0), 2)
-            frame_roi = frame[y:y + h, x:x + w]  # Extract region of interest (ROI)
+            frame_roi = frame[y:y + h, x:x + w]  
 
         cv2.imshow("frame ROI", frame_roi)
 
@@ -26,7 +26,7 @@ while True:
                 cv2.rectangle(frame, (0, 100), (640, 300), (0, 255, 0), cv2.FILLED)
                 cv2.putText(frame, "snapped!", (150, 250), cv2.FONT_HERSHEY_DUPLEX, 1, (0, 0, 255), 3)
                 cv2.imshow("Output Video", frame)
-                cv2.waitKey(1000)  # Pause to display the 'snapped!' message
+                cv2.waitKey(1000) 
                 count += 1
         elif key == ord('e'):
             break
